@@ -1,267 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Tran Duc Long — Portfolio</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Tran Duc Long Portfolio</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
     <style>
+
+        /* ===== RESET ===== */
         * {
             margin: 0;
             padding: 0;
-            box-sizing: border-box
+            box-sizing: border-box;
+        }
+
+        /* ===== THEME ===== */
+        :root {
+            --bg: #0b1020;
+            --panel: #121933;
+            --card: #182044;
+            --text: #e6ebff;
+            --soft: #9aa4d4;
+            --accent: #6c7cff;
+        }
+
+        body.light {
+            --bg: #eef2ff;
+            --panel: #ffffff;
+            --card: #ffffff;
+            --text: #0f172a;
+            --soft: #64748b;
+            --accent: #6366f1;
         }
 
         body {
-            font-family: 'Inter',sans-serif;
-            background: linear-gradient(180deg,#eef2ff 0%, #ffffff 40%);
-            color: #0f172a;
+            font-family: Inter,sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            transition: .3s;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 60px 24px 40px;
-        }
-
-        .hero {
+        /* ===== LAYOUT ===== */
+        .app {
             display: grid;
-            grid-template-columns: 420px 1fr;
-            gap: 48px;
-            align-items: center;
+            grid-template-columns: 320px 1fr;
+            min-height: 100vh;
+        }
+
+        /* ===== SIDEBAR ===== */
+        .sidebar {
+            background: var(--panel);
+            padding: 40px 30px;
+            border-right: 1px solid rgba(255,255,255,.05);
+            display: flex;
+            flex-direction: column;
         }
 
         .avatar {
-            width: 280px;
-            height: 280px;
-            border-radius: 32px;
-            background: linear-gradient(135deg,#6366f1,#22c55e,#06b6d4);
-            box-shadow: 0 30px 60px rgba(99,102,241,0.25);
+            width: 120px;
+            height: 120px;
+            border-radius: 28px;
+            background: linear-gradient(135deg,#6c7cff,#22c55e,#06b6d4);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 90px;
-            color: white;
+            font-size: 46px;
             font-weight: 800;
+            margin-bottom: 25px;
         }
 
-        .hero-right h1 {
-            font-size: 56px;
-            line-height: 1.05;
-            font-weight: 800;
+        .name {
+            font-size: 32px;
+            font-weight: 900;
         }
 
         .role {
-            margin-top: 12px;
-            font-size: 20px;
-            color: #475569;
-            font-weight: 600;
+            color: var(--soft);
+            margin-top: 6px;
         }
 
-        .intro {
-            margin-top: 22px;
-            color: #475569;
-            line-height: 1.7;
-            font-size: 16px;
-            max-width: 560px;
+        .sidebar p {
+            color: var(--soft);
+            margin-top: 18px;
+            line-height: 1.6;
         }
 
-        .contact-row {
-            margin-top: 26px;
+        /* ===== SOCIAL ICON BAR ===== */
+        .social {
+            margin-top: auto;
             display: flex;
             gap: 14px;
             flex-wrap: wrap;
+            justify-content: center;
         }
 
-        .contact-btn {
-            text-decoration: none;
-            padding: 12px 18px;
-            border-radius: 14px;
-            background: white;
-            border: 1px solid #e2e8f0;
-            font-weight: 600;
-            color: #0f172a;
-            transition: .25s;
-        }
-
-            .contact-btn:hover {
-                transform: translateY(-4px);
-                box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-                background: #eef2ff;
-                color: #4338ca;
+            .social a {
+                width: 42px;
+                height: 42px;
+                border-radius: 12px;
+                background: var(--card);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: .25s;
+                border: 1px solid rgba(255,255,255,.05);
             }
 
-        .info-grid {
-            margin-top: 70px;
-            display: grid;
-            grid-template-columns: repeat(3,1fr);
-            gap: 22px;
+                .social a img {
+                    width: 22px;
+                    height: 22px;
+                }
+
+                .social a:hover {
+                    background: var(--accent);
+                    transform: translateY(-3px) scale(1.05);
+                }
+
+
+        /* ===== MAIN ===== */
+        .main {
+            padding: 40px 60px;
         }
 
-        .card {
-            background: white;
-            border-radius: 20px;
-            padding: 24px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-        }
-
-        .skills {
+        /* ===== TOPBAR ===== */
+        .topbar {
             display: flex;
-            flex-wrap: wrap;
-            gap: 10px
-        }
-
-        .skill {
-            padding: 8px 14px;
-            border-radius: 999px;
-            background: #eef2ff;
-            font-size: 14px;
-            font-weight: 600;
-            color: #3730a3;
-        }
-
-        .experience {
-            margin-top: 80px
-        }
-
-        .exp-header h2 {
-            font-size: 36px;
-            margin-bottom: 30px
-        }
-
-        .projects {
-            display: flex;
-            flex-direction: column;
-            gap: 30px
-        }
-
-        .project {
-            background: white;
-            border-radius: 22px;
-            padding: 28px;
-            border: 1px solid #e2e8f0;
-            transition: .25s;
-        }
-
-            .project:hover {
-                transform: translateY(-8px);
-                box-shadow: 0 25px 50px rgba(0,0,0,0.08);
-            }
-
-        .project-top {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
+            justify-content: flex-end;
             gap: 12px;
+            margin-bottom: 30px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            backdrop-filter: blur(10px);
         }
+
+        .top-btn {
+            padding: 10px 18px;
+            border-radius: 14px;
+            border: 1px solid rgba(255,255,255,.06);
+            font-weight: 600;
+            background: var(--panel);
+            color: var(--text);
+            cursor: pointer;
+            transition: .25s;
+        }
+
+            .top-btn:hover {
+                background: var(--accent);
+                transform: translateY(-2px);
+            }
+
+        /* ===== SECTION ===== */
+        .section-title {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 30px;
+        }
+
+        /* ===== TIMELINE ===== */
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+        }
+
+            .timeline::before {
+                content: "";
+                position: absolute;
+                left: 10px;
+                top: 0;
+                bottom: 0;
+                width: 2px;
+                background: var(--accent);
+            }
+
+        .year-block {
+            margin-bottom: 40px;
+        }
+
+        .year {
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        /* ===== PROJECT ===== */
+        .project {
+            background: var(--card);
+            padding: 24px;
+            border-radius: 20px;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+            .project::before {
+                content: "";
+                position: absolute;
+                left: -34px;
+                top: 32px;
+                width: 16px;
+                height: 16px;
+                border-radius: 50%;
+                background: var(--accent);
+            }
 
         .project-title {
-            font-size: 22px;
-            font-weight: 700
-        }
-
-        .project-meta {
-            color: #64748b;
-            font-weight: 600
+            font-size: 32px;
+            font-weight: 900;
         }
 
         .project-desc {
-            margin-top: 14px;
-            color: #475569;
-            line-height: 1.7
+            margin-top: 8px;
+            color: var(--soft);
         }
 
-        /* SWIPE GALLERY */
+        /* ===== GALLERY ===== */
         .gallery {
-            position: relative;
+            margin-top: 18px;
             overflow: hidden;
-            border-radius: 16px;
-            margin-top: 20px;
+            border-radius: 14px;
         }
 
         .gallery-track {
             display: flex;
-            transition: transform .4s ease;
+            transition: .4s;
         }
 
         .gallery img {
             width: 100%;
             flex-shrink: 0;
-            user-select: none;
-            pointer-events: none;
         }
 
-        .gallery-dots {
-            position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 8px;
-        }
-
-        .gallery-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: white;
-            opacity: .5;
-        }
-
-            .gallery-dot.active {
-                opacity: 1
-            }
-
-        .project iframe {
+        /* ===== VIDEO ===== */
+        iframe {
             width: 100%;
-            height: 420px;
+            height: 360px;
             border: none;
-            border-radius: 16px;
+            border-radius: 14px;
             margin-top: 18px;
         }
 
-        .tech {
-            margin-top: 16px;
+        /* META TAG */
+        .project-meta {
+            margin-top: 10px;
             display: flex;
-            gap: 10px;
-            flex-wrap: wrap
+            flex-wrap: wrap;
+            gap: 8px;
         }
 
-            .tech span {
-                background: #f1f5f9;
-                padding: 8px 14px;
-                border-radius: 10px;
-                font-size: 14px;
-                font-weight: 600;
+        .tag {
+            padding: 6px 12px;
+            border-radius: 999px;
+            background: rgba(108,124,255,.15);
+            color: var(--accent);
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* STORY */
+        .project-story {
+            margin-top: 12px;
+            color: var(--soft);
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        /* STORE LINKS */
+        .project-links {
+            margin-top: 14px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .store-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 12px;
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: 600;
+            background: rgba(108,124,255,.12);
+            border: 1px solid rgba(108,124,255,.25);
+            text-decoration: none;
+            color: var(--text);
+        }
+
+            .store-btn img {
+                width: 16px;
+                height: 16px;
             }
 
-        footer {
-            margin-top: 60px;
-            text-align: center;
-            color: #94a3b8;
-            font-size: 14px
-        }
 
-        @media(max-width:1000px) {
-            .hero {
+            .store-btn:hover {
+                background: var(--accent);
+                transform: translateY(-1px);
+            }
+
+
+        /* ===== MOBILE ===== */
+        @media(max-width:900px) {
+            .app {
                 grid-template-columns: 1fr;
-                text-align: center
             }
 
-            .avatar {
-                margin: auto
-            }
-        }
-
-        @media(max-width:700px) {
-            .hero-right h1 {
-                font-size: 36px
-            }
-
-            .info-grid {
-                grid-template-columns: 1fr
+            .sidebar {
+                border-right: none;
+                border-bottom: 1px solid rgba(255,255,255,.05);
             }
         }
     </style>
@@ -269,250 +316,176 @@
 
 <body>
 
-    <div class="container">
+    <div class="app">
 
-        <section class="hero">
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+
             <div class="avatar">TL</div>
 
-            <div class="hero-right">
-                <h1>Tran Duc Long</h1>
-                <div class="role">Unity Developer</div>
+            <div class="name"
+                 data-en="Tran Duc Long"
+                 data-vi="Trần Đức Long">Tran Duc Long</div>
 
-                <p class="intro">
-                    Unity developer passionate about gameplay systems, performance optimization,
-                    and building fun player experiences.
-                </p>
-
-                <div class="contact-row">
-                    <a class="contact-btn" href="mailto:tranduclong09@gmail.com">Email</a>
-                    <a class="contact-btn" href="https://github.com/LongNoobb" target="_blank">GitHub</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- INFO GRID (ABOUT / EDUCATION / SKILLS) -->
-        <section class="info-grid">
-
-            <div class="card">
-                <h3>Education</h3>
-                <p><b>FPT University Ha Noi</b></p>
-                <p>Software Engineering</p>
-                <p>2021 — 2025</p>
+            <div class="role"
+                 data-en="Unity Developer"
+                 data-vi="Lập trình Unity">
+                Unity Developer
             </div>
 
-            <div class="card">
-                <h3>Skills</h3>
-                <div class="skills">
-                    <span class="skill">Unity</span>
-                    <span class="skill">C#</span>
-                    <span class="skill">Gameplay</span>
-                    <span class="skill">Optimization</span>
-                    <span class="skill">AI Integration</span>
-                    <span class="skill">Git</span>
-                </div>
+            <p data-en="My goal is to grow into a developer who can design and develop gameplay and core game systems that deliver stable performance and meaningful player experiences."
+               data-vi="Mục tiêu của tôi là phát triển thành developer có thể thiết kế và phát triển gameplay cùng các hệ thống game cốt lõi, giúp game vận hành ổn định và mang lại trải nghiệm có giá trị cho người chơi.">
+                My goal is to grow into a developer who can design and develop gameplay and core game systems that deliver stable performance and meaningful player experiences.
+            </p>
+
+            <!-- SOCIAL ICON -->
+            <div class="social">
+
+                <!-- Facebook -->
+                <a href="https://facebook.com/YOUR_FACEBOOK" target="_blank">
+                    <img src="https://cdn.simpleicons.org/facebook" alt="facebook">
+                </a>
+
+                <!-- GitHub -->
+                <a href="https://github.com/YOUR_GITHUB" target="_blank">
+                    <img src="https://cdn.simpleicons.org/github" alt="github">
+                </a>
+
+                <!-- Gmail -->
+                <a href="mailto:youremail@gmail.com">
+                    <img src="https://cdn.simpleicons.org/gmail" alt="gmail">
+                </a>
+
             </div>
 
-            <div class="card">
-                <h3>Languages</h3>
-                <p>Vietnamese</p>
-                <p>English (B2)</p>
+
+        </div>
+
+        <!-- MAIN -->
+        <div class="main">
+
+            <!-- TOPBAR -->
+            <div class="topbar">
+                <button id="langBtn" class="top-btn" onclick="toggleLang()">🌐 EN</button>
+                <button class="top-btn" onclick="toggleTheme()">🌙 Theme</button>
             </div>
 
-        </section>
-
-        <section class="experience">
-
-            <div class="exp-header">
-                <h2>Experience & Projects</h2>
+            <div class="section-title"
+                 data-en="Projects Timeline"
+                 data-vi="Dòng thời gian dự án">
+                Projects Timeline
             </div>
 
-            <div class="projects">
+            <div class="timeline">
 
-                <!-- PROJECT -->
-                <div class="project">
+                <div class="year-block">
+                    <div class="year">2025</div>
 
-                    <div class="project-top">
+                    <div class="project">
+
                         <div class="project-title">Food War</div>
-                        <div class="project-meta">Card Strategy • 2025 — Present</div>
-                    </div>
 
-                    <div class="project-desc">
-                        Turn-based card gameplay, deck building and balancing logic.
-                    </div>
+                        <!-- GENRE -->
+                        <div class="project-meta">
+                            <span class="tag"
+                                  data-en="Turn-based Strategy"
+                                  data-vi="Chiến thuật theo lượt">
+                                Turn-based Strategy
+                            </span>
 
-                    <!-- SWIPE IMAGE GALLERY -->
-                    <div class="gallery">
-                        <div class="gallery-track">
-                            <img src="\asset\Screenshot 2026-01-21 204316.png">
-                            <img src="\asset\Screenshot 2026-01-21 204324.png">
-                            <img src="https://via.placeholder.com/900x500/aaffaa">
+                            <span class="tag"
+                                  data-en="Card Battle"
+                                  data-vi="Đấu thẻ bài">
+                                Card Battle
+                            </span>
                         </div>
-                        <div class="gallery-dots"></div>
-                    </div>
 
-                    <iframe src="https://www.youtube.com/embed/rnMFdbEvEcA"></iframe>
-
-                    <div class="tech">
-                        <span>Unity</span>
-                        <span>C#</span>
-                        <span>AI</span>
-                    </div>
-
-                </div>
-
-                <!-- PROJECT 2 -->
-                <div class="project">
-
-                    <div class="project-top">
-                        <div class="project-title">Blackout: The Vagabond's Odyssey</div>
-                        <div class="project-meta">3D Roguelike • 2025</div>
-                    </div>
-
-                    <div class="project-desc">
-                        Combat systems, skill architecture and FPS optimization across gameplay scenes.
-                    </div>
-
-                    <div class="gallery">
-                        <div class="gallery-track">
-                            <img src="https://via.placeholder.com/900x500/222244">
-                            <img src="https://via.placeholder.com/900x500/444488">
-                            <img src="https://via.placeholder.com/900x500/6666aa">
+                        <!-- STORY -->
+                        <div class="project-story"
+                             data-en="In a world where food spirits battle for dominance, players build decks from magical ingredients to defeat rival chefs."
+                             data-vi="Trong thế giới nơi linh hồn món ăn chiến đấu để thống trị, người chơi xây deck từ nguyên liệu ma thuật để đánh bại đầu bếp đối thủ.">
+                            In a world where food spirits battle for dominance, players build decks from magical ingredients to defeat rival chefs.
                         </div>
-                        <div class="gallery-dots"></div>
+
+                        <!-- STORE LINKS -->
+                        <div class="project-links">
+                            <a class="store-btn" href="YOUR_PLAY_LINK" target="_blank">
+                                <img src="https://cdn.simpleicons.org/googleplay">
+                                Google Play
+                            </a>
+
+                            <a class="store-btn" href="YOUR_APPSTORE_LINK" target="_blank">
+                                <img src="https://cdn.simpleicons.org/appstore">
+                                App Store
+                            </a>
+
+                            <a class="store-btn" href="YOUR_STEAM_LINK" target="_blank">
+                                <img src="https://cdn.simpleicons.org/steam">
+                                Steam
+                            </a>
+
+                            <a class="store-btn" href="YOUR_STEAM_LINK" target="_blank">
+                                <img src="https://cdn.simpleicons.org/itchdotio">
+                                Itch.io
+                            </a>
+                        </div>
+
+                        <!-- GALLERY -->
+                        <div class="gallery">
+                            <div class="gallery-track">
+                                <img src="https://via.placeholder.com/900x500/6c7cff">
+                                <img src="https://via.placeholder.com/900x500/22c55e">
+                                <img src="https://via.placeholder.com/900x500/06b6d4">
+                            </div>
+                        </div>
+
+                        <!-- VIDEO -->
+                        <iframe src="https://www.youtube.com/embed/rnMFdbEvEcA"></iframe>
+
                     </div>
 
-                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
-
-                    <div class="tech">
-                        <span>Unity</span>
-                        <span>C#</span>
-                        <span>Optimization</span>
-                        <span>Combat System</span>
-                    </div>
 
                 </div>
 
             </div>
-        </section>
 
-        <footer>
-            © 2026 Tran Duc Long — Portfolio
-        </footer>
-
+        </div>
     </div>
 
     <script>
-        // Prevent default browser drag ghost image
-        window.addEventListener('dragstart', e => e.preventDefault());
-        document.body.style.userSelect = 'none';
 
-        document.querySelectorAll('.gallery').forEach(gallery => {
+        /* LANG */
+        let lang = "en";
 
-            const track = gallery.querySelector('.gallery-track');
+        function toggleLang() {
+            lang = lang === "en" ? "vi" : "en";
+
+            document.querySelectorAll("[data-en]").forEach(el => {
+                el.innerText = el.dataset[lang];
+            });
+
+            document.getElementById("langBtn").innerText =
+                lang === "en" ? "🌐 EN" : "🌐 VI";
+        }
+
+        /* THEME */
+        function toggleTheme() {
+            document.body.classList.toggle("light");
+        }
+
+        /* SLIDE */
+        document.querySelectorAll(".gallery").forEach(g => {
+            const track = g.querySelector(".gallery-track");
             const slides = track.children;
-            const dotsContainer = gallery.querySelector('.gallery-dots');
+            let i = 0;
 
-            let index = 0;
-            let startX = 0;
-            let currentTranslate = 0;
-            let isDragging = false;
-            let autoSlideInterval;
-
-            // Create dots
-            for (let i = 0; i < slides.length; i++) {
-                const dot = document.createElement('div');
-                dot.className = 'gallery-dot';
-                if (i === 0) dot.classList.add('active');
-                dotsContainer.appendChild(dot);
-            }
-
-            const dots = dotsContainer.children;
-
-            function update() {
-                track.style.transition = 'transform .4s ease';
-                track.style.transform = `translateX(-${index * 100}%)`;
-                [...dots].forEach(d => d.classList.remove('active'));
-                dots[index].classList.add('active');
-            }
-
-            function nextSlide() {
-                index++;
-                if (index >= slides.length) index = 0;
-                update();
-            }
-
-            function startAutoSlide() {
-                stopAutoSlide();
-                autoSlideInterval = setInterval(nextSlide, 3500);
-            }
-
-            function stopAutoSlide() {
-                if (autoSlideInterval) clearInterval(autoSlideInterval);
-            }
-
-            // TOUCH EVENTS
-            gallery.addEventListener('touchstart', e => {
-                stopAutoSlide();
-                isDragging = true;
-                track.style.transition = 'none';
-                startX = e.touches[0].clientX;
-            }, { passive: true });
-
-            gallery.addEventListener('touchmove', e => {
-                if (!isDragging) return;
-                let moveX = e.touches[0].clientX;
-                let diff = moveX - startX;
-                track.style.transform = `translateX(calc(-${index * 100}% + ${diff}px))`;
-            }, { passive: true });
-
-            gallery.addEventListener('touchend', e => {
-                if (!isDragging) return;
-                isDragging = false;
-
-                let diff = e.changedTouches[0].clientX - startX;
-                if (diff > 60 && index > 0) index--;
-                if (diff < -60 && index < slides.length - 1) index++;
-
-                update();
-                startAutoSlide();
-            });
-
-            // MOUSE EVENTS
-            gallery.addEventListener('mousedown', e => {
-                e.preventDefault();
-                stopAutoSlide();
-                isDragging = true;
-                track.style.transition = 'none';
-                startX = e.clientX;
-            });
-
-            window.addEventListener('mousemove', e => {
-                if (!isDragging) return;
-                let diff = e.clientX - startX;
-                track.style.transform = `translateX(calc(-${index * 100}% + ${diff}px))`;
-            });
-
-            window.addEventListener('mouseup', e => {
-                if (!isDragging) return;
-                isDragging = false;
-
-                let diff = e.clientX - startX;
-                if (diff > 60 && index > 0) index--;
-                if (diff < -60 && index < slides.length - 1) index++;
-
-                update();
-                startAutoSlide();
-            });
-
-            // Pause when hover
-            gallery.addEventListener('mouseenter', stopAutoSlide);
-            gallery.addEventListener('mouseleave', startAutoSlide);
-
-            startAutoSlide();
-
+            setInterval(() => {
+                i = (i + 1) % slides.length;
+                track.style.transform = `translateX(-${i * 100}%)`;
+            }, 3500);
         });
+
     </script>
 
 </body>
 </html>
-

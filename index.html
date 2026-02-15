@@ -24,6 +24,7 @@
             --text: #e6ebff;
             --soft: #9aa4d4;
             --accent: #6c7cff;
+            --frame: #182044;
         }
 
         body.light {
@@ -33,6 +34,7 @@
             --text: #0f172a;
             --soft: #64748b;
             --accent: #6366f1;
+            --frame: #ededed;
         }
 
         body {
@@ -84,42 +86,91 @@
 
         .sidebar p {
             color: var(--soft);
-            margin-top: 18px;
-            line-height: 1.6;
+            margin-top: 14px;
+            line-height: 1.4;
+            font-size: 16px;
+        }
+
+        .sidebar-section {
+            margin-top: 26px;
+        }
+
+        .sidebar-section-title {
             font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            opacity: 0.7;
+            margin-bottom: 12px;
+        }
+
+        /* ===== EDUCATION =====*/
+        .edu-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .edu-school {
+            color: var(--soft);
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .edu-major {
+            color: var(--soft);
+            font-size: 15px;
+            opacity: 0.9;
+        }
+
+        .edu-time {
+            color: var(--soft);
+            font-size: 14px;
+            opacity: 0.8;
+            /*margin-top: 4px;*/
         }
 
         /* ===== SOCIAL ICON BAR ===== */
         .social {
-            margin-top: auto;
+            margin-top: 16px;
             display: flex;
+            flex-direction: column;
             gap: 14px;
-            flex-wrap: wrap;
-            justify-content: center;
         }
 
-            .social a {
-                width: 42px;
-                height: 42px;
-                border-radius: 12px;
-                background: var(--card);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                transition: .25s;
-                border: 1px solid rgba(255,255,255,.05);
+        /* từng dòng contact */
+        .social-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 12px 16px;
+            border-radius: 14px;
+            background: var(--frame);
+            border: 1px solid rgba(255,255,255,.05);
+            text-decoration: none;
+            color: white;
+            transition: .25s;
+        }
+
+            /* icon */
+            .social-item img {
+                width: 22px;
+                height: 22px;
             }
 
-                .social a img {
-                    width: 22px;
-                    height: 22px;
-                }
+            /* text */
+            .social-item span {
+                font-size: 15px;
+                font-weight: 500;
+                opacity: 0.9;
+                font-weight: bold;
+                color: var(--soft);
+            }
 
-                .social a:hover {
-                    background: var(--accent);
-                    transform: translateY(-3px) scale(1.05);
-                }
-
+            /* hover effect */
+            .social-item:hover {
+                background: var(--accent);
+                transform: translateX(6px);
+            }
 
         /* ===== MAIN ===== */
         .main {
@@ -368,32 +419,79 @@
                 Unity Developer
             </div>
 
-            <p data-en="My goal is to grow into a developer who can design and develop gameplay and core game systems that deliver stable performance and meaningful player experiences."
-               data-vi="Mục tiêu của tôi là phát triển thành lập trình viên có thể thiết kế và phát triển gameplay cùng các hệ thống game cốt lõi, giúp game vận hành ổn định và mang lại trải nghiệm có giá trị cho người chơi.">
-                My goal is to grow into a developer who can design and develop gameplay and core game systems that deliver stable performance and meaningful player experiences.
-            </p>
+            <!-- OBJECTIVE -->
+            <div class="sidebar-section">
 
-            <!-- SOCIAL ICON -->
-            <div class="social">
+                <div class="sidebar-section-title"
+                     data-en="Objective"
+                     data-vi="Mục tiêu">
+                    Objective
+                </div>
 
-                <!-- Facebook -->
-                <a href="https://www.facebook.com/tranduclong0708" target="_blank">
-                    <img src="https://cdn.simpleicons.org/facebook" alt="facebook">
-                </a>
+                <p class="section-text"
+                   data-en="My goal is to grow into a developer who can design and develop gameplay and core game systems that deliver stable performance and meaningful player experiences."
+                   data-vi="Mục tiêu của tôi là phát triển thành lập trình viên có thể thiết kế và phát triển gameplay cùng các hệ thống game cốt lõi, giúp game vận hành ổn định và mang lại trải nghiệm có giá trị cho người chơi.">
+                    My goal is to grow into a developer who can design and develop gameplay and core game systems that deliver stable performance and meaningful player experiences.
+                </p>
 
-                <!-- GitHub -->
-                <!-- <a href="https://github.com/LongNoobb" target="_blank">
-                    <img src="https://cdn.simpleicons.org/github" alt="github">
-                </a> -->
+            </div>
 
-                <!-- Gmail -->
-                <a href="https://mail.google.com/mail/?view=cm&to=tranduclong09@gmail.com" target="_blank">
-                    <img src="https://cdn.simpleicons.org/gmail" alt="gmail">
-                </a>
+            <!-- Education -->
+            <div class="sidebar-section">
+
+                <div class="sidebar-section-title"
+                     data-en="Education"
+                     data-vi="Học vấn">
+                    Education
+                </div>
+
+                <div class="edu-item">
+
+                    <div class="edu-school"
+                         data-en="FPT University Ha Noi"
+                         data-vi="Đại học FPT Hà Nội">
+                        FPT University Ha Noi
+                    </div>
+
+                    <div class="edu-major"
+                         data-en="Software Engineering"
+                         data-vi="Kỹ thuật phần mềm">
+                        Software Engineering
+                    </div>
+
+                    <div class="edu-time">
+                        2021 — 2025
+                    </div>
+
+                </div>
 
             </div>
 
 
+            <!-- CONTACT INFORMATION -->
+            <div class="sidebar-section">
+
+                <div class="sidebar-section-title"
+                     data-en="Contact Information"
+                     data-vi="Thông tin liên hệ">
+                    Contact Information
+                </div>
+
+                <div class="social">
+
+                    <a class="social-item" href="https://www.facebook.com/tranduclong0708" target="_blank">
+                        <img src="https://cdn.simpleicons.org/facebook" alt="facebook">
+                        <span>Facebook</span>
+                    </a>
+
+                    <a class="social-item" href="https://mail.google.com/mail/?view=cm&to=tranduclong09@gmail.com" target="_blank">
+                        <img src="https://cdn.simpleicons.org/gmail" alt="gmail">
+                        <span>Gmail</span>
+                    </a>
+
+                </div>
+
+            </div>
         </div>
 
         <!-- MAIN -->
@@ -402,7 +500,7 @@
             <!-- TOPBAR -->
             <div class="topbar">
                 <button id="langBtn" class="top-btn" onclick="toggleLang()">🌐 EN</button>
-                <button class="top-btn" onclick="toggleTheme()">🌙 Theme</button>
+                <button id="themeBtn" class="top-btn" onclick="toggleTheme()">🌙 Theme</button>
             </div>
 
             <div class="section-title"
@@ -714,6 +812,13 @@
         /* THEME */
         function toggleTheme() {
             document.body.classList.toggle("light");
+            const btn = document.getElementById("themeBtn");
+
+            if (document.body.classList.contains("light")) {
+                btn.innerText = "☀️ Theme";
+            } else {
+                btn.innerText = "🌙 Theme";
+            }
         }
 
         /* SLIDE */

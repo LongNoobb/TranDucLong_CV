@@ -72,11 +72,12 @@
         }
 
         .name {
-            font-size: 32px;
+            font-size: 35px;
             font-weight: 900;
         }
 
         .role {
+            font-size: 20px;
             color: var(--soft);
             margin-top: 6px;
         }
@@ -85,6 +86,7 @@
             color: var(--soft);
             margin-top: 18px;
             line-height: 1.6;
+            font-size: 18px;
         }
 
         /* ===== SOCIAL ICON BAR ===== */
@@ -154,7 +156,7 @@
 
         /* ===== SECTION ===== */
         .section-title {
-            font-size: 32px;
+            font-size: 35px;
             font-weight: 800;
             margin-bottom: 30px;
         }
@@ -180,7 +182,7 @@
         }
 
         .year {
-            font-size: 22px;
+            font-size: 33px;
             font-weight: 800;
             margin-bottom: 20px;
         }
@@ -205,6 +207,29 @@
                 background: var(--accent);
             }
 
+        .project-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 10px;
+        }
+
+        .project-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 18px;
+            object-fit: cover;
+            border: 2px solid rgba(255,255,255,.1);
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,.2);
+        }
+
+        .project-title-info {
+            display: flex;
+            flex-direction: column;
+            /*gap: 1px;*/
+        }
+
         .project-title {
             font-size: 32px;
             font-weight: 900;
@@ -215,27 +240,33 @@
             color: var(--soft);
         }
 
-        /* ===== GALLERY ===== */
+        /* ===== GALLERY (CẢI THIỆN ĐỂ XỬ LÝ ẢNH NHIỀU KÍCH THƯỚC) ===== */
         .gallery {
             margin-top: 18px;
             overflow: hidden;
             border-radius: 14px;
+            height: 775px;
+            position: relative;
+            background: rgba(0,0,0,.15);
         }
 
         .gallery-track {
             display: flex;
-            transition: .4s;
+            transition: transform .4s ease-in-out;
+            height: 100%;
         }
 
         .gallery img {
             width: 100%;
+            height: 100%;
+            object-fit: contain;
             flex-shrink: 0;
         }
 
         /* ===== VIDEO ===== */
         iframe {
             width: 100%;
-            height: 360px;
+            height: 500px;
             border: none;
             border-radius: 14px;
             margin-top: 18px;
@@ -263,7 +294,7 @@
             margin-top: 12px;
             color: var(--soft);
             line-height: 1.6;
-            font-size: 14px;
+            font-size: 16px;
         }
 
         /* STORE LINKS */
@@ -310,6 +341,10 @@
                 border-right: none;
                 border-bottom: 1px solid rgba(255,255,255,.05);
             }
+
+            .gallery {
+                height: 350px;
+            }
         }
     </style>
 </head>
@@ -352,7 +387,7 @@
                 </a>
 
                 <!-- Gmail -->
-                <a href="mailto:tranduclong09@gmail.com">
+                <a href="https://mail.google.com/mail/?view=cm&to=tranduclong09@gmail.com" target="_blank">
                     <img src="https://cdn.simpleicons.org/gmail" alt="gmail">
                 </a>
 
@@ -379,137 +414,258 @@
             <div class="timeline">
 
                 <div class="year-block">
-                    <div class="year">2025</div>
+                    <div class="year">2026</div>
 
-                     <div class="project">
+                    <div class="project">
 
-                        <div class="project-title">Soda Jam</div>
+                        <div class="project-header">
+                            <img src="asset/Commandos3D/icon.png" alt="Icon" class="project-icon">
 
-                        <!-- GENRE -->
-                        <div class="project-meta">
-                            <span class="tag"
-                                  data-en="Puzzle"
-                                  data-vi="Giải đố">
-                                Puzzle
-                            </span>
+                            <div class="project-title-info">
+                                <div class="project-title">Commandos: 3D Shooter</div>
+                                <!-- GENRE -->
+                                <div class="project-meta">
+                                    <span class="tag"
+                                          data-en="3D"
+                                          data-vi="3D">
+                                        3D
+                                    </span>
 
-                            <span class="tag"
-                                  data-en="3D"
-                                  data-vi="3D">
-                                3D
-                            </span>
+                                    <span class="tag"
+                                          data-en="Action"
+                                          data-vi="Hành động">
+                                        Action
+                                    </span>
+
+                                    <span class="tag"
+                                          data-en="Sci-fi"
+                                          data-vi="Sci-fi">
+                                        Sci-fi
+                                    </span>
+
+                                    <span class="tag"
+                                          data-en="RPG"
+                                          data-vi="RPG">
+                                        RPG
+                                    </span>
+
+                                    <span class="tag"
+                                          data-en="Shooting"
+                                          data-vi="Bắn súng">
+                                        Shooting
+                                    </span>
+
+                                </div>
+                            </div>
+
                         </div>
 
-<!-- STORE LINKS -->
+
+                        <!-- STORE LINKS -->
+                        <div class="project-links">
+                            <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.Ajna.Commandos3DShooter&pcampaignid=web_share" target="_blank">
+                                <img src="asset\google_play_icon.png">
+                                Google Play
+                            </a>
+
+                            <!--<a class="store-btn" href="https://apps.apple.com/us/app/puzzle-tap-away/id6757425899" target="_blank">
+                                <img src="asset\app_store_icon.png">
+                                App Store
+                            </a>-->
+                            <!-- STORY -->
+                            <div class="project-story"
+                                 data-en="Humanity stands on the brink of collapse as combat robots suddenly turn against their creators and launch coordinated attacks across the world. You are deployed on high-risk missions to break through enemy forces, eliminate threats, and uncover the truth behind the uprising. Each victory brings you closer to discovering who — or what — is truly controlling the machines."
+                                 data-vi="Nhân loại đang đứng bên bờ sụp đổ khi các robot chiến đấu bất ngờ quay lưng lại với con người và phát động những cuộc tấn công trên toàn thế giới. Bạn được cử tham gia các nhiệm vụ nguy hiểm để xuyên thủng phòng tuyến địch, tiêu diệt kẻ thù và khám phá sự thật phía sau cuộc nổi dậy. Mỗi chiến thắng sẽ đưa bạn tiến gần hơn đến việc tìm ra ai — hoặc thứ gì — đang thực sự điều khiển các cỗ máy.">
+                                Humanity stands on the brink of collapse as combat robots suddenly turn against their creators and launch coordinated attacks across the world. You are deployed on high-risk missions to break through enemy forces, eliminate threats, and uncover the truth behind the uprising. Each victory brings you closer to discovering who — or what — is truly controlling the machines.
+                            </div>
+
+                            <!-- GALLERY -->
+                            <div class="gallery">
+                                <div class="gallery-track">
+                                    <img src="asset/Commandos3D/1.jpg" draggable="false">
+                                    <img src="asset/Commandos3D/2.jpg" draggable="false">
+                                    <img src="asset/Commandos3D/3.jpg" draggable="false">
+                                    <img src="asset/Commandos3D/4.jpg" draggable="false">
+                                    <img src="asset/Commandos3D/5.jpg" draggable="false">
+                                </div>
+                            </div>
+
+                            <!-- VIDEO -->
+                            <iframe src="https://www.youtube.com/embed/rnMFdbEvEcA"></iframe>
+
+                        </div>
+
+
+
+
+                    </div>
+
+                </div>
+
+                <div class="year-block">
+                    <div class="year">2025</div>
+
+                    <div class="project">
+
+                        <div class="project-header">
+                            <img src="asset/TapAway3D/icon.png" alt="Icon" class="project-icon">
+                            <div class="project-title-info">
+                                <div class="project-title">Tap Away 3D</div>
+                                <!-- GENRE -->
+                                <div class="project-meta">
+                                    <span class="tag"
+                                          data-en="Puzzle"
+                                          data-vi="Giải đố">
+                                        Puzzle
+                                    </span>
+
+                                    <span class="tag"
+                                          data-en="3D"
+                                          data-vi="3D">
+                                        3D
+                                    </span>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- STORE LINKS -->
+                        <div class="project-links">
+                            <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.tapawaythreed.ajna&pcampaignid=web_share" target="_blank">
+                                <img src="asset\google_play_icon.png">
+                                Google Play
+                            </a>
+
+                            <a class="store-btn" href="https://apps.apple.com/us/app/puzzle-tap-away/id6757425899" target="_blank">
+                                <img src="asset\app_store_icon.png">
+                                App Store
+                            </a>
+
+                            <!-- GALLERY -->
+                            <div class="gallery">
+                                <div class="gallery-track">
+                                    <img src="asset/TapAway3D/1.jpg" draggable="false">
+                                    <img src="asset/TapAway3D/2.jpg" draggable="false">
+                                    <img src="asset/TapAway3D/3.jpg" draggable="false">
+                                    <img src="asset/TapAway3D/4.jpg" draggable="false">
+                                    <img src="asset/TapAway3D/5.jpg" draggable="false">
+                                    <img src="asset/TapAway3D/6.jpg" draggable="false">
+                                </div>
+                            </div>
+
+                            <!-- VIDEO -->
+                            <iframe src="https://www.youtube.com/embed/514sUQFYti8"></iframe>
+
+                        </div>
+                    </div>
+
+                    <div class="project">
+
+                        <div class="project-header">
+                            <img src="asset/SodaJam/icon.png" alt="Icon" class="project-icon">
+                            <div class="project-title-info">
+                                <div class="project-title">Soda Jam</div>
+                                <!-- GENRE -->
+                                <div class="project-meta">
+                                    <span class="tag"
+                                          data-en="Puzzle"
+                                          data-vi="Giải đố">
+                                        Puzzle
+                                    </span>
+
+                                    <span class="tag"
+                                          data-en="3D"
+                                          data-vi="3D">
+                                        3D
+                                    </span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- STORE LINKS -->
                         <div class="project-links">
                             <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.sodajam.ajna&pcampaignid=web_share" target="_blank">
-                                <img src="https://cdn.simpleicons.org/googleplay">
+                                <img src="asset\google_play_icon.png">
                                 Google Play
                             </a>
 
                             <a class="store-btn" href="https://apps.apple.com/us/app/soda-jam-saga/id6756005088" target="_blank">
-                                <img src="https://cdn.simpleicons.org/appstore">
+                                <img src="asset\app_store_icon.png">
                                 App Store
                             </a>
 
-                            <!-- <a class="store-btn" href="YOUR_STEAM_LINK" target="_blank">
-                                <img src="https://cdn.simpleicons.org/steam">
-                                Steam
-                            </a> -->
-
-                            <!-- <a class="store-btn" href="https://fistjuicer.itch.io/blackout" target="_blank">
-                                <img src="https://cdn.simpleicons.org/itchdotio">
-                                Itch.io
-                            </a> -->
-                        </div>
-                        
-                        <!-- STORY -->
-                        <!-- <div class="project-story"
-                             data-en="After a catastrophic event known as The Blackout erased history and plunged the world into eternal twilight, humanity struggles to survive among the ruins. You awaken as a lone wanderer, exploring procedurally shifting lands, battling twisted creatures, and uncovering fragments of a forgotten civilization. Every step brings you closer to the truth behind The Blackout — or deeper into the darkness."
-                             data-vi="Sau thảm họa mang tên The Blackout xóa sạch lịch sử và nhấn chìm thế giới vào màn hoàng hôn vĩnh cửu, nhân loại phải vật lộn sinh tồn giữa những tàn tích. Bạn tỉnh dậy với vai trò một kẻ lữ hành cô độc, khám phá những vùng đất thay đổi liên tục, chiến đấu với sinh vật méo mó và lần theo dấu vết của một nền văn minh đã bị lãng quên. Mỗi bước đi đưa bạn tiến gần hơn đến sự thật về The Blackout — hoặc chìm sâu hơn vào bóng tối.">
-                            After a catastrophic event known as The Blackout erased history and plunged the world into eternal twilight, humanity struggles to survive among the ruins. You awaken as a lone wanderer, exploring procedurally shifting lands, battling twisted creatures, and uncovering fragments of a forgotten civilization. Every step brings you closer to the truth behind The Blackout — or deeper into the darkness.
-                        </div> -->
-
-                        
-
-                        <!-- GALLERY -->
-                        <div class="gallery">
-                            <div class="gallery-track">
-                                <img src="asset/SodaJam/0.jpg">
-                                <img src="asset/SodaJam/1.jpg">
-                                <img src="asset/SodaJam/2.jpg">
-                                <img src="asset/SodaJam/3.jpg">
-                                <img src="asset/SodaJam/4.jpg">
-                                <img src="asset/SodaJam/5.jpg">
-                                <img src="asset/SodaJam/6.jpg">
+                            <!-- GALLERY -->
+                            <div class="gallery">
+                                <div class="gallery-track">
+                                    <img src="asset/SodaJam/0.jpg" draggable="false">
+                                    <img src="asset/SodaJam/1.jpg" draggable="false">
+                                    <img src="asset/SodaJam/2.jpg" draggable="false">
+                                    <img src="asset/SodaJam/3.jpg" draggable="false">
+                                    <img src="asset/SodaJam/4.jpg" draggable="false">
+                                    <img src="asset/SodaJam/5.jpg" draggable="false">
+                                    <img src="asset/SodaJam/6.jpg" draggable="false">
+                                </div>
                             </div>
+
+                            <!-- VIDEO -->
+                            <iframe src="https://www.youtube.com/embed/1jodjzRIs6g"></iframe>
+
                         </div>
-
-                        <!-- VIDEO -->
-                        <iframe src="https://www.youtube.com/embed/1jodjzRIs6g"></iframe>
-
                     </div>
-                    
+
                     <div class="project">
 
-                        <div class="project-title">Blackout: The Vagabond’s Odyssey</div>
+                        <div class="project-header">
+                            <img src="asset/Blackout/icon.png" alt="Icon" class="project-icon">
+                            <div class="project-title-info">
+                                <div class="project-title">Blackout: The Vagabond’s Odyssey</div>
+                                <!-- GENRE -->
+                                <div class="project-meta">
+                                    <span class="tag"
+                                          data-en="Action"
+                                          data-vi="Hành động">
+                                        Action
+                                    </span>
 
-                        <!-- GENRE -->
-                        <div class="project-meta">
-                            <span class="tag"
-                                  data-en="Action"
-                                  data-vi="Hành động">
-                                Action
-                            </span>
+                                    <span class="tag"
+                                          data-en="Roguelike"
+                                          data-vi="Roguelike">
+                                        Roguelike
+                                    </span>
 
-                            <span class="tag"
-                                  data-en="Roguelike"
-                                  data-vi="Roguelike">
-                                Roguelike
-                            </span>
+                                    <span class="tag"
+                                          data-en="2D"
+                                          data-vi="2D">
+                                        2D
+                                    </span>
 
-                            <span class="tag"
-                                  data-en="2D"
-                                  data-vi="2D">
-                                2D
-                            </span>
+                                    <span class="tag"
+                                          data-en="Adventure"
+                                          data-vi="Phiêu lưu">
+                                        Adventure
+                                    </span>
 
-                            <span class="tag"
-                                  data-en="Adventure"
-                                  data-vi="Phiêu lưu">
-                                Adventure
-                            </span>
+                                    <span class="tag"
+                                          data-en="Dungeon"
+                                          data-vi="Ngục tối">
+                                        Dungeon
+                                    </span>
+                                </div>
+                            </div>
 
-                            <span class="tag"
-                                  data-en="Dungeon"
-                                  data-vi="Ngục tối">
-                                Dungeon
-                            </span>
                         </div>
 
-<!-- STORE LINKS -->
+                        <!-- STORE LINKS -->
                         <div class="project-links">
-                            <!-- <a class="store-btn" href="YOUR_PLAY_LINK" target="_blank">
-                                <img src="https://cdn.simpleicons.org/googleplay">
-                                Google Play
-                            </a>
-
-                            <a class="store-btn" href="YOUR_APPSTORE_LINK" target="_blank">
-                                <img src="https://cdn.simpleicons.org/appstore">
-                                App Store
-                            </a>
-
-                            <a class="store-btn" href="YOUR_STEAM_LINK" target="_blank">
-                                <img src="https://cdn.simpleicons.org/steam">
-                                Steam
-                            </a> -->
-
                             <a class="store-btn" href="https://fistjuicer.itch.io/blackout" target="_blank">
                                 <img src="https://cdn.simpleicons.org/itchdotio">
                                 Itch.io
                             </a>
                         </div>
-                        
+
                         <!-- STORY -->
                         <div class="project-story"
                              data-en="After a catastrophic event known as The Blackout erased history and plunged the world into eternal twilight, humanity struggles to survive among the ruins. You awaken as a lone wanderer, exploring procedurally shifting lands, battling twisted creatures, and uncovering fragments of a forgotten civilization. Every step brings you closer to the truth behind The Blackout — or deeper into the darkness."
@@ -517,23 +673,21 @@
                             After a catastrophic event known as The Blackout erased history and plunged the world into eternal twilight, humanity struggles to survive among the ruins. You awaken as a lone wanderer, exploring procedurally shifting lands, battling twisted creatures, and uncovering fragments of a forgotten civilization. Every step brings you closer to the truth behind The Blackout — or deeper into the darkness.
                         </div>
 
-                        
+
 
                         <!-- GALLERY -->
                         <div class="gallery">
                             <div class="gallery-track">
-                                <img src="asset/blackout1.png">
-                                <img src="asset/blackout2.png">
-                                <img src="asset/blackout3.png">
-                                <img src="asset/blackout4.png">
+                                <img src="asset/Blackout/blackout1.png" draggable="false">
+                                <img src="asset/Blackout/blackout2.png" draggable="false">
+                                <img src="asset/Blackout/blackout3.png" draggable="false">
+                                <img src="asset/Blackout/blackout4.png" draggable="false">
                             </div>
                         </div>
 
                         <!-- VIDEO -->
-                        <iframe src="asset/demo_blackout.mp4"></iframe>
-
+                        <iframe src="asset/Blackout/demo_blackout.mp4"></iframe>
                     </div>
-                    
 
                 </div>
 
@@ -541,7 +695,6 @@
 
         </div>
     </div>
-
     <script>
 
         /* LANG */
@@ -579,5 +732,3 @@
 
 </body>
 </html>
-
-
